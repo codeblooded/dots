@@ -1,24 +1,86 @@
-" Panel appearance
-set number        " show line numbers
-set showcmd       " sticky command bar at the bottom
-set lazyredraw    " delay redrawing (recommended by dougblack.io)
-set laststatus=0  " hide the status bar
-set ruler         " show line/character information in status bar
+" vim:fdm=marker
 
-" Spaces and tabs
-set tabstop=2       " use 2 spaces for a <tab> occurrences
-set softtabstop=2   " use 2 spaces for <tab> insertions
-set expandtab       " prefer spaces for indentation
-filetype indent on  " change indentation settings by filetype
+" Appearance {{{
 
-" Code formatting
-syntax enable   " use syntax highlighting
-set showmatch   " highlight matching parenthesis
+colorscheme murphy
+" use the murphy pretty scheme
 
-" Searching
-set incsearch " instantly begin highlighting results
-set hlsearch  " highlight all matches
+set laststatus=0
+" hide the status bar
 
-" Custom keybindings
-nnoremap <leader><space> :nohlsearch  " unhighlight all search matches
+set number
+" display line numbers by default
+
+set ruler
+" show the column + row information at the bottom
+
+set showmatch
+" display matching parenthesis and braces
+
+syntax enable
+" always use syntax highlighting
+
+" }}}
+
+" Compatibility {{{
+
+set backspace=indent,eol,start
+" ensure a backspace key works everywhere
+
+set clipboard=unnamed
+" use the system clipboard by default
+
+set mouse=a
+" enable the mouse
+
+set nocompatible
+" enable VI incompatible features
+
+" }}}
+
+" Indentation {{{
+
+filetype indent on
+" change indentation based on the filetype
+
+set expandtab
+" convert <tab> key press to spaces
+
+set softtabstop=4
+" number of spaces inserted for a <tab> key press
+
+set tabstop=4
+" number of spaces displayed for an actual tab character
+
+" }}}
+
+" Keybindings {{{
+
+let mapleader=","
+" use the comma as the leader key
+
+nnoremap <leader><space> :nohlsearch<CR>
+" use ,<space> to unhighlight search results
+
+nnoremap <leader>l :set number!<CR>
+" use ,L to toggle line numbers
+
+" }}}
+
+" Optimizations {{{
+
+set lazyredraw
+" do not re-render unnecessarily
+
+" }}}
+
+" Search {{{
+
+set hlsearch
+" highlight all search results
+
+set incsearch
+" use incremental searching
+
+" }}}
 
