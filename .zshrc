@@ -1,6 +1,3 @@
-# Appearance Settings
-export PROMPT="%F{blue}%B%1~%f%b %B%F{green}%%%b%f "
-
 # ZSH Settings
 export HISTFILE=~/.histfile
 export HISTSIZE=2500
@@ -11,6 +8,13 @@ bindkey -e
 zstyle :compinstall filename '/Users/ben/.zshrc'
 autoload -Uz compinit
 compinit
+
+# Appearance Settings
+export PROMPT="%F{blue}%B%1~%f%b %B%F{green}%%%b%f "
+
+# Editor Settings
+export EDITOR=vim
+export VISUAL=vim
 
 # Ruby
 eval "$(rbenv init -)"
@@ -41,7 +45,6 @@ if [ -f '/Users/ben/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/
 
 # Add GPG key to bash (just in case)
 export GPG_TTY=$(tty)
-
 
 # Alias ls -al
 alias ll="ls -al"
@@ -91,3 +94,4 @@ function license {
   curl -L "$LICENSE_GIST_URL/${LICENSE_NAME}_LICENSE" > LICENSE
   echo -e '\n' >> LICENSE
 }
+
